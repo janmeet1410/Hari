@@ -1,3 +1,13 @@
+[data-automation-id="CanvasZone-SectionContainer"]{
+          max-width: 100%!important;
+}
+[data-automation-id="CanvasZone"], [data-automation-id="CanvasControl"], [data-automation-id="CanvasSection"]{
+      padding: 0 0px !important;
+}
+
+#CommentsWrapper{
+  display: none;
+}
 #Home{
      background: linear-gradient(to bottom, #fff5f5b8, #fff5f5);
 }

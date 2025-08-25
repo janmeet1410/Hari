@@ -19,8 +19,8 @@ export default class Banner extends React.Component<IBannerProps, {}> {
     return (
       <div id='Home'>
         <section className="hero">
-          <div className="tagline">✨ Pioneering Digital Excellence</div>
-          <h1>Innovating the <span>Future Together</span></h1>
+          <div className="tagline">✨ Procurement Digital Solutions</div>
+          <h1>Procurement Digital Solutions<span> Build Future Together</span></h1>
           <p>
             We are a forward-thinking team dedicated to creating exceptional
             digital experiences and cutting-edge solutions that drive success.
