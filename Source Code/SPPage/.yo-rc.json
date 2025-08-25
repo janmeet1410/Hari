@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "sp-page",
+    "libraryId": "fc3b7e4e-a510-4a91-95ba-bf315858c945",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "sp-page",
+    "solutionShortDescription": "sp-page description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
