@@ -27,6 +27,14 @@
     overflow: hidden;
 }
 
+
+.herologo{
+      height: 80px;
+    width: auto;
+    float: left;
+    margin-bottom: 20px;
+        margin-top: -20px;
+}
 .tagline {
     display: inline-block;
     background: rgba(255, 255, 255, 0.15);
@@ -50,7 +58,7 @@
 .hero p {
     margin-top: 20px;
     font-size: 18px;
-    max-width: 600px;
+    /* max-width: 600px; */
 }
 
 .buttons {
@@ -346,7 +354,7 @@
 
     .mission-section p.subtitle {
       font-size: 16px;
-      max-width: 700px;
+    max-width: 1000px;
       margin: 0 auto 50px;
       line-height: 1.6;
       color: #f7f7f7;

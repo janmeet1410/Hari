@@ -19,11 +19,12 @@ export default class Banner extends React.Component<IBannerProps, {}> {
     return (
       <div id='Home'>
         <section className="hero">
-          <div className="tagline">✨ Procurement Digital Solutions</div>
-          <h1>Procurement Digital Solutions<span> Build Future Together</span></h1>
+                <img className='herologo' src={require('../assets/PAL.jpg')} />
+
+          <div style={{display:'none'}} className="tagline">✨ Procurement AI Lab</div>
+          <h1>PAL - Procurement <span> AI Lab</span></h1>
           <p>
-            We are a forward-thinking team dedicated to creating exceptional
-            digital experiences and cutting-edge solutions that drive success.
+           Procurement Digital Process & Solutions (DPS) - Global Services Procurement
           </p>
           {/* <div className="buttons">
       <a href="#" className="btn btn-primary">Discover Our Work →</a>
@@ -37,43 +38,43 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
           <div className='Quicklinkswrapper'>
 
-            <a href="http://">
+            <a href="#team">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/team.png')} />
                 <p>Team</p>
               </div>
             </a>
-            <a href="http://">
+            <a href="#mission">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/goal.png')} />
                 <p>Our Mission </p>
               </div>
             </a>
-            <a href="http://">
+            <a href="#capabilities">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/capability.png')} />
                 <p>Our Capabilities</p>
               </div>
             </a>
-            <a href="http://">
+            <a href="#tech">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/digital.png')} />
                 <p>Tech Radar</p>
               </div>
             </a>
-            <a href="http://">
+            <a href="#products">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/product.png')} />
                 <p>Products</p>
               </div>
             </a>
-            <a href="http://">
+            <a href="#Usecases">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/analysis.png')} />
                 <p>Use cases</p>
               </div>
             </a>
-              <a href="http://">
+              <a href="">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/reputation.png')} />
                 <p>Voice of customer</p>
@@ -82,50 +83,13 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </div>
         </div>
 
-          <section className="about-section">
-            <div className="badge"><i className="fas fa-users"></i> Meet Our Team</div>
-            <h2>About Our Team</h2>
-            <p>
-              We are a passionate team of innovators, designers, and engineers committed to pushing the
-              boundaries of what's possible in technology and design.
-            </p>
-
-            <div className="stats-container">
-              <div className="stat-box">
-                <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>50+</h3>
-                <p>Team Members</p>
-              </div>
-              <div className="stat-box">
-                <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>10+</h3>
-                <p>Years Experience</p>
-              </div>
-              <div className="stat-box">
-                <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>200+</h3>
-                <p>Global Clients</p>
-              </div>
-              <div className="stat-box">
-                <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>500+</h3>
-                <p>Projects Delivered</p>
-              </div>
-            </div>
-          </section>
-
 
           <section className="solutions-section">
             <div className="solutions-container">
               <div className="solutions-text">
-                <h2>Building Tomorrow's<br />Solutions Today</h2>
+                <h2>Our Mantra to Success​</h2>
                 <p>
-                  Our diverse team combines expertise across multiple disciplines to deliver innovative
-                  solutions that exceed expectations. From concept to deployment, we're with you every step of the way.
-                </p>
-                <p>
-                  We believe in the power of collaboration, continuous learning, and staying ahead of
-                  industry trends to provide our clients with cutting-edge solutions.
+                  "To accelerate value creation for Procurement by pioneering data-driven innovation, simplifying processes, and empowering partners through actionable insights from Data Science, Advanced Analytics, and Generative AI.”​
                 </p>
               </div>
 
@@ -146,7 +110,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           <span className="gold">5★</span>
           Rating
         </div> */}
-                <img src={require('../assets/officebg.jpg')} />
+                <img src={require('../assets/missionimg.png')} />
               </div>
             </div>
           </section>
@@ -154,20 +118,18 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
         </div>
 
-        <section className="mission-section">
+        <section id='mission' className="mission-section">
           <h2>Our Mission</h2>
           <p className="subtitle">
-            Empowering businesses through innovative technology solutions that create lasting
-            impact and drive meaningful change.
+            We empower Procurement professionals and business partners to perform at their best—through world-class AI(Artificial Intelligence) solutions and actionable insights that enable faster, smarter decision-making.We e prioritize what matters - accelerating delivery on initiatives such as Project Preferred for MedTech and R&D Procurement projects in Innovative Medicine, ensuring speed and value.Every Challenge is an opportunity. We’re continuously learning from the challenges, and we’re building scalable solutions like Smart Source AI, designed to grow smarter with time and continuously deliver value.
           </p>
 
           <div className="mission-cards">
             <div className="mission-card">
               <i className="fas fa-bullseye"></i>
-              <h3>Precision</h3>
+              <h3>Our Vision</h3>
               <p>
-                We deliver solutions with meticulous attention to detail, ensuring every project
-                meets the highest standards of excellence.
+                To accelerate value creation for Procurement by pioneering data-driven innovation, simplifying processes, and empowering partners through actionable insights from Data Science, Advanced Analytics, and Generative AI.
               </p>
             </div>
             <div className="mission-card">
@@ -199,7 +161,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
         </section>
 
         <div className='Pagecontainer'>
-          <section className="capabilities-section">
+          <section id='capabilities' className="capabilities-section">
             <div className="badge"><i className="fas fa-cogs"></i> What We Do</div>
             <h2>Our Capabilities</h2>
             <p className="subtitle">
@@ -211,7 +173,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
               <div className="capability-card">
                 <div className="icon"> <img src={require('../assets/team.png')} /> </div>
-                <h3>Data Solutions</h3>
+                <h3>BUSINESS PROCESS MAPPING​</h3>
                 <p>Comprehensive data management, analytics, and business intelligence solutions.</p>
                 <ul>
                   <li>Database Design</li>
@@ -222,7 +184,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
               <div className="capability-card">
                 <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>Cloud Infrastructure</h3>
+                <h3>DATA SCIENCE AND FEATURE ENGG ​</h3>
                 <p>Scalable, secure cloud solutions and DevOps practices for modern applications.</p>
                 <ul>
                   <li>AWS & Azure</li>
@@ -233,7 +195,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
               <div className="capability-card">
                 <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>Cybersecurity</h3>
+                <h3>INSIGHT BUILDING​ ​</h3>
                 <p>Advanced security measures to protect your applications and data from threats.</p>
                 <ul>
                   <li>Security Audits</li>
@@ -244,7 +206,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
               <div className="capability-card">
                 <div className="icon"><img src={require('../assets/team.png')} /></div>
-                <h3>Business Intelligence</h3>
+                <h3>SOLUTIONING STRATEGIES​</h3>
                 <p>Transform your data into actionable insights with advanced analytics and reporting.</p>
                 <ul>
                   <li>Dashboard Creation</li>
@@ -257,8 +219,8 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </section>
 
 
-          <section className="tech-section">
-            <div className="badge">⚡ Our Technology Stack</div>
+          <section id='tech' className="tech-section">
+            <div className="badge">⚡ Our AI Tech Stack</div>
             <h2>Tech Radar</h2>
             <p className="subtitle">
               Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.
@@ -306,9 +268,9 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </section>
 
 
-          <section className="products-section">
+          <section id='products' className="products-section">
             <div className="badge">⚙️ Our Solutions</div>
-            <h2>Our Products</h2>
+            <h2>AI Products - By PAL </h2>
             <p className="subtitle">
               Innovative software solutions designed to solve complex business challenges and accelerate digital transformation for companies worldwide.
             </p>
@@ -379,9 +341,9 @@ export default class Banner extends React.Component<IBannerProps, {}> {
             </div>
           </section>
 
-          <section className="success-section">
-            <div className="badge">📌 Client Success Stories</div>
-            <h2>Success Stories</h2>
+          <section id='Usecases' className="success-section">
+            <div className="badge">📌 Insights</div>
+            <h2>Insights from AI - Use cases</h2>
             <p className="subtitle">
               Real-world use cases showcasing how our solutions drive measurable business impact across diverse industries and transform organizations worldwide.
             </p>
@@ -444,6 +406,38 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </section>
 
         </div>
+
+           <section id='team' className="about-section">
+            <div className="badge"><i className="fas fa-users"></i> Meet Our Team</div>
+            <h2>About Our Team</h2>
+            <p>
+              We are a passionate team of innovators, designers, and engineers committed to pushing the
+              boundaries of what's possible in technology and design.
+            </p>
+
+            {/* <div className="stats-container">
+              <div className="stat-box">
+                <div className="icon"><img src={require('../assets/team.png')} /></div>
+                <h3>50+</h3>
+                <p>Team Members</p>
+              </div>
+              <div className="stat-box">
+                <div className="icon"><img src={require('../assets/team.png')} /></div>
+                <h3>10+</h3>
+                <p>Years Experience</p>
+              </div>
+              <div className="stat-box">
+                <div className="icon"><img src={require('../assets/team.png')} /></div>
+                <h3>200+</h3>
+                <p>Global Clients</p>
+              </div>
+              <div className="stat-box">
+                <div className="icon"><img src={require('../assets/team.png')} /></div>
+                <h3>500+</h3>
+                <p>Projects Delivered</p>
+              </div>
+            </div> */}
+          </section>
 
       </div>
     );
