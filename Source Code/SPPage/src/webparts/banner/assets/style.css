@@ -8,25 +8,28 @@
 #CommentsWrapper{
   display: none;
 }
-#Home{
+/* #Home{
      background: linear-gradient(to bottom, #fff5f5b8, #fff5f5);
-}
+} */
 
 .hero {
     height: 330px;
     /* background: linear-gradient(135deg, #d62828, #e63946); */
     /* background: linear-gradient(135deg, #d62828, #e63946), url('../assets/herobanner.jpg'); */
-    background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/herobanner.jpg);
+    background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/bg.png);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-position: center;
 }
-
+.infoflex{
+  text-align: justify;
+}
 
 .herologo{
       height: 80px;
@@ -34,6 +37,7 @@
     float: left;
     margin-bottom: 20px;
         margin-top: -20px;
+            margin-right: 100px;
 }
 .tagline {
     display: inline-block;
@@ -335,7 +339,7 @@
 
     .mission-section {
       background: #e63946;
-    background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/teambg.jpg);
+    background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/teambg.jpg);
 
       color: #fff;
       text-align: center;

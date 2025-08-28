@@ -21,19 +21,25 @@ export default class Banner extends React.Component<IBannerProps, {}> {
         <section className="hero">
                 <img className='herologo' src={require('../assets/PAL.jpg')} />
 
-          <div style={{display:'none'}} className="tagline">✨ Procurement AI Lab</div>
+         <div className='infoflex'>
+           <div style={{display:'none'}} className="tagline">✨ Procurement AI Lab</div>
           <h1>PAL - Procurement <span> AI Lab</span></h1>
           <p>
            Procurement Digital Process & Solutions (DPS) - Global Services Procurement
           </p>
+          <p>
+            Say Hello to PAL - Your AI Partner for Procurement Excellence
+          </p>
+         </div>
           {/* <div className="buttons">
       <a href="#" className="btn btn-primary">Discover Our Work →</a>
       <a href="#" className="btn btn-secondary">▶ Watch Demo</a>
     </div> */}
           <div className="scroll-indicator"></div>
         </section>
+
         <div className='Pagecontainer'> 
-           <div className='Quicklinks' style={{marginTop:'25px'}}>
+              <div className='Quicklinks' style={{marginTop:'25px'}}>
           {/* <h2 className='webheaders'>Quick Links</h2> */}
 
           <div className='Quicklinkswrapper'>
@@ -82,6 +88,50 @@ export default class Banner extends React.Component<IBannerProps, {}> {
             </a>
           </div>
         </div>
+</div>
+
+         <section id='mission' className="mission-section">
+          <h2>Our Mission</h2>
+          <p className="subtitle">
+           To accelerate value creation for Procurement by pioneering data-driven innovation, simplifying processes, and empowering partners through actionable insights from Data Science, Advanced Analytics, and Generative AI.  </p>
+
+          <div className="mission-cards">
+            <div className="mission-card">
+              <i className="fas fa-bullseye"></i>
+              <h3>C: COMPETE</h3>
+              <p>
+                 We empower Procurement professionals and business partners to perform at their best—through world-class AI(Artificial Intelligence) solutions and actionable insights that enable faster, smarter decision-making. </p>
+            </div>
+            <div className="mission-card">
+              <i className="fas fa-heart"></i>
+              <h3>E: EXECUTE</h3>
+              <p>
+                We prioritize what matters - accelerating delivery on initiatives such as Project Preferred for MedTech and R&D Procurement projects in Innovative Medicine, ensuring speed and value. 
+              </p>
+            </div>
+            <div className="mission-card">
+              <i className="fas fa-lightbulb"></i>
+              <h3>O: OPTIMIZE</h3>
+              <p>
+                Every Challenge is an opportunity. We’re continuously learning from the challenges, and we’re building scalable solutions like Smart Source AI, designed to grow smarter with time and continuously deliver value. 
+              </p>
+            </div>
+          </div>
+
+          <p className="mission-quote">
+            "We believe technology should serve humanity, not the other way around.
+            Our mission is to create solutions that enhance lives and empower businesses
+            to achieve their full potential."
+          </p>
+
+          <div className="circle small"></div>
+          <div className="circle large"></div>
+        </section>
+        <div className='Pagecontainer'> 
+
+           
+
+       
 
 
           <section className="solutions-section">
@@ -118,47 +168,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
         </div>
 
-        <section id='mission' className="mission-section">
-          <h2>Our Mission</h2>
-          <p className="subtitle">
-            We empower Procurement professionals and business partners to perform at their best—through world-class AI(Artificial Intelligence) solutions and actionable insights that enable faster, smarter decision-making.We e prioritize what matters - accelerating delivery on initiatives such as Project Preferred for MedTech and R&D Procurement projects in Innovative Medicine, ensuring speed and value.Every Challenge is an opportunity. We’re continuously learning from the challenges, and we’re building scalable solutions like Smart Source AI, designed to grow smarter with time and continuously deliver value.
-          </p>
-
-          <div className="mission-cards">
-            <div className="mission-card">
-              <i className="fas fa-bullseye"></i>
-              <h3>Our Vision</h3>
-              <p>
-                To accelerate value creation for Procurement by pioneering data-driven innovation, simplifying processes, and empowering partners through actionable insights from Data Science, Advanced Analytics, and Generative AI.
-              </p>
-            </div>
-            <div className="mission-card">
-              <i className="fas fa-heart"></i>
-              <h3>Passion</h3>
-              <p>
-                Our team is driven by genuine enthusiasm for technology and a commitment to making
-                a positive difference in the world.
-              </p>
-            </div>
-            <div className="mission-card">
-              <i className="fas fa-lightbulb"></i>
-              <h3>Innovation</h3>
-              <p>
-                We constantly explore new technologies and approaches to provide cutting-edge
-                solutions that stay ahead of the curve.
-              </p>
-            </div>
-          </div>
-
-          <p className="mission-quote">
-            "We believe technology should serve humanity, not the other way around.
-            Our mission is to create solutions that enhance lives and empower businesses
-            to achieve their full potential."
-          </p>
-
-          <div className="circle small"></div>
-          <div className="circle large"></div>
-        </section>
+      
 
         <div className='Pagecontainer'>
           <section id='capabilities' className="capabilities-section">
@@ -229,39 +239,31 @@ export default class Banner extends React.Component<IBannerProps, {}> {
             <div className="tech-grid">
 
               <div className="tech-card">
-                <h3>Backend</h3>
+                <h3>DATA WORKFLOW MANAGEMENT​</h3>
                 <div className="tags">
-                  <span className="tag">Node.js</span>
-                  <span className="tag">Python</span>
-                  <span className="tag">Go</span>
-                  <span className="tag">PostgreSQL</span>
-                  <span className="tag">Redis</span>
-                  <span className="tag">GraphQL</span>
+                  <span className="tag">Data Transformation and Pipelining, ​</span>
+                  <span className="tag">Data Modeling</span>
+                  <span className="tag">CDL Configuration</span>
                 </div>
               </div>
 
               <div className="tech-card">
-                <h3>Cloud & DevOps</h3>
+                <h3>AI & PREDICTIVE ANALYTICS ​</h3>
                 <div className="tags">
-                  <span className="tag">AWS</span>
-                  <span className="tag">Azure</span>
-                  <span className="tag">Docker</span>
-                  <span className="tag">Kubernetes</span>
-                  <span className="tag">Terraform</span>
-                  <span className="tag">GitHub Actions</span>
+                  <span className="tag">Machine Learning​</span>
+                  <span className="tag">Hypothesis Testing</span>
+                  <span className="tag">Optimization & Clustering Algorithms</span>
                 </div>
               </div>
 
 
               <div className="tech-card">
-                <h3>AI & Data</h3>
+                <h3>COGNITIVE INTELLIGENCE​</h3>
                 <div className="tags">
-                  <span className="tag">TensorFlow</span>
-                  <span className="tag">PyTorch</span>
-                  <span className="tag">OpenAI</span>
-                  <span className="tag">Apache Spark</span>
-                  <span className="tag">Elasticsearch</span>
-                  <span className="tag">MongoDB</span>
+                  <span className="tag">Reasoning ​</span>
+                  <span className="tag">Agentic AI</span>
+                  <span className="tag">Knowledge Graphs</span>
+                  <span className="tag">Deep Learning</span>
                 </div>
               </div>
             </div>
