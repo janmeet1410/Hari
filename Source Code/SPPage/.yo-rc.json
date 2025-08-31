@@ -1,7 +1,7 @@
 {
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "version": "1.14.0",
     "libraryName": "sp-page",
     "libraryId": "fc3b7e4e-a510-4a91-95ba-bf315858c945",

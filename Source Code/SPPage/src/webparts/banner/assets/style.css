@@ -16,7 +16,8 @@
     height: 330px;
     /* background: linear-gradient(135deg, #d62828, #e63946); */
     /* background: linear-gradient(135deg, #d62828, #e63946), url('../assets/herobanner.jpg'); */
-    background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/bg.png);
+    /* background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/bg.png); */
+    background-color: #eb1700;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -28,7 +29,8 @@
     background-position: center;
 }
 .infoflex{
-  text-align: justify;
+    text-align: center;
+    margin: 0 50px;
 }
 
 .herologo{
@@ -37,7 +39,7 @@
     float: left;
     margin-bottom: 20px;
         margin-top: -20px;
-            margin-right: 100px;
+            /* margin-right: 100px; */
 }
 .tagline {
     display: inline-block;
@@ -151,6 +153,7 @@
         text-decoration: none;
     color: #0c0c0c;
     font-weight: 500;
+    flex-basis: 23%;
 }
 .Quicklinkcard{
     text-align: center;
@@ -338,10 +341,10 @@
     /* ------------------------------------------------------------------------------- */
 
     .mission-section {
-      background: #e63946;
-    background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/teambg.jpg);
+      /* background: #e63946; */
+    /* background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/teambg.jpg); */
 
-      color: #fff;
+      /* color: #fff; */
       text-align: center;
       padding: 20px 20px;
       position: relative;
@@ -359,9 +362,8 @@
     .mission-section p.subtitle {
       font-size: 16px;
     max-width: 1000px;
-      margin: 0 auto 50px;
+      margin: 0 auto 25px;
       line-height: 1.6;
-      color: #f7f7f7;
     }
 
     .mission-cards {
@@ -373,10 +375,10 @@
     }
 
     .mission-card {
-background: hsl(0deg 0% 100% / 32%);
-    padding: 30px 25px;
+background: #eb1700;
+    padding: 0px 25px;
     border-radius: 12px;
-    flex: 1 1 280px;
+    flex: 1 ;
     max-width: 320px;
     text-align: center;
     color: #fff;
@@ -811,6 +813,19 @@ background: hsl(0deg 0% 100% / 32%);
       color: #e63946;
     }
 
+
+    .abutton{
+       color: #e63946;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 35px;
+    display: block;
+    border: 1px solid #e63946;
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 35px auto 0 auto;
+    }
     /* -------------------------------------------- */
 
      .success-section {

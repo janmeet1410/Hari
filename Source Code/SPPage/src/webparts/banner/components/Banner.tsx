@@ -19,7 +19,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
     return (
       <div id='Home'>
         <section className="hero">
-                <img className='herologo' src={require('../assets/PAL.jpg')} />
+                <img className='herologo' style={{width:'270px', height:'auto'}} src={require('../assets/jnj.png')} />
 
          <div className='infoflex'>
            <div style={{display:'none'}} className="tagline">✨ Procurement AI Lab</div>
@@ -31,6 +31,9 @@ export default class Banner extends React.Component<IBannerProps, {}> {
             Say Hello to PAL - Your AI Partner for Procurement Excellence
           </p>
          </div>
+
+                <img className='herologo' src={require('../assets/PAL.jpg')} />
+
           {/* <div className="buttons">
       <a href="#" className="btn btn-primary">Discover Our Work →</a>
       <a href="#" className="btn btn-secondary">▶ Watch Demo</a>
@@ -39,58 +42,11 @@ export default class Banner extends React.Component<IBannerProps, {}> {
         </section>
 
         <div className='Pagecontainer'> 
-              <div className='Quicklinks' style={{marginTop:'25px'}}>
-          {/* <h2 className='webheaders'>Quick Links</h2> */}
-
-          <div className='Quicklinkswrapper'>
-
-            <a href="#team">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/team.png')} />
-                <p>Team</p>
-              </div>
-            </a>
-            <a href="#mission">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/goal.png')} />
-                <p>Our Mission </p>
-              </div>
-            </a>
-            <a href="#capabilities">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/capability.png')} />
-                <p>Our Capabilities</p>
-              </div>
-            </a>
-            <a href="#tech">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/digital.png')} />
-                <p>Tech Radar</p>
-              </div>
-            </a>
-            <a href="#products">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/product.png')} />
-                <p>Products</p>
-              </div>
-            </a>
-            <a href="#Usecases">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/analysis.png')} />
-                <p>Use cases</p>
-              </div>
-            </a>
-              <a href="">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/reputation.png')} />
-                <p>Voice of customer</p>
-              </div>
-            </a>
-          </div>
-        </div>
+            
 </div>
 
-         <section id='mission' className="mission-section">
+<div style={{display:'flex'}}>
+         <section style={{width:'50%'}} id='mission' className="mission-section">
           <h2>Our Mission</h2>
           <p className="subtitle">
            To accelerate value creation for Procurement by pioneering data-driven innovation, simplifying processes, and empowering partners through actionable insights from Data Science, Advanced Analytics, and Generative AI.  </p>
@@ -118,15 +74,69 @@ export default class Banner extends React.Component<IBannerProps, {}> {
             </div>
           </div>
 
-          <p className="mission-quote">
+          {/* <p className="mission-quote">
             "We believe technology should serve humanity, not the other way around.
             Our mission is to create solutions that enhance lives and empower businesses
             to achieve their full potential."
-          </p>
+          </p> */}
 
           <div className="circle small"></div>
           <div className="circle large"></div>
         </section>
+  <div className='Quicklinks'  style={{marginTop:'70px', width:'50%'}}>
+          {/* <h2 className='webheaders'>Quick Links</h2> */}
+
+          <div className='Quicklinkswrapper'>
+ <a href="#products">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/quicklinks/product.png')} />
+                <p>AI Products</p>
+              </div>
+            </a>
+             <a href="#Usecases">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/quicklinks/analysis.png')} />
+                <p>AI Insights</p>
+              </div>
+            </a>
+            <a href="#team">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/team.png')} />
+                <p>News Letters</p>
+              </div>
+            </a>
+            <a href="#team">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/team.png')} />
+                <p>Submit Demands</p>
+              </div>
+            </a>
+            <a href="#capabilities">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/quicklinks/capability.png')} />
+                <p>Our Capabilities</p>
+              </div>
+            </a>
+            <a href="#tech">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/quicklinks/digital.png')} />
+                <p>Tech Radar</p>
+              </div>
+            </a>
+           
+           
+              {/* <a href="">
+              <div className='Quicklinkcard'>
+                <img src={require('../assets/quicklinks/reputation.png')} />
+                <p>Voice of customer</p>
+              </div>
+            </a> */}
+          </div>
+        </div>
+</div>
+
+
+
         <div className='Pagecontainer'> 
 
            
@@ -134,7 +144,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
        
 
 
-          <section className="solutions-section">
+          {/* <section className="solutions-section">
             <div className="solutions-container">
               <div className="solutions-text">
                 <h2>Our Mantra to Success​</h2>
@@ -144,34 +154,27 @@ export default class Banner extends React.Component<IBannerProps, {}> {
               </div>
 
               <div className="solutions-stats">
-                {/* <div className="stat-card">
-          <span className="green">24/7</span>
-          Support
-        </div>
-        <div className="stat-card">
-          <span className="blue">100%</span>
-          Quality
-        </div>
-        <div className="stat-card">
-          <span className="purple">15+</span>
-          Countries
-        </div>
-        <div className="stat-card">
-          <span className="gold">5★</span>
-          Rating
-        </div> */}
+               
                 <img src={require('../assets/missionimg.png')} />
               </div>
             </div>
-          </section>
+          </section> */}
 
 
         </div>
+            <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700"}} >Our Portfolio</h2>
 
-      
+      <div style={{display:'flex'}}>
+        <div style={{width:'50%'}}>
+          <img  style={{width:'95%'}} src={require('../assets/image1.png')} />
+        </div>
+        <div style={{width:'50%'}}>
+          <img style={{width:'90%'}} src={require('../assets/mindimg.png')}  />
+          </div>
+      </div>
 
         <div className='Pagecontainer'>
-          <section id='capabilities' className="capabilities-section">
+          {/* <section id='capabilities' className="capabilities-section">
             <div className="badge"><i className="fas fa-cogs"></i> What We Do</div>
             <h2>Our Capabilities</h2>
             <p className="subtitle">
@@ -226,10 +229,10 @@ export default class Banner extends React.Component<IBannerProps, {}> {
               </div>
 
             </div>
-          </section>
+          </section> */}
 
 
-          <section id='tech' className="tech-section">
+          {/* <section id='tech' className="tech-section">
             <div className="badge">⚡ Our AI Tech Stack</div>
             <h2>Tech Radar</h2>
             <p className="subtitle">
@@ -267,7 +270,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
 
           <section id='products' className="products-section">
@@ -341,6 +344,8 @@ export default class Banner extends React.Component<IBannerProps, {}> {
                 </div>
               </div>
             </div>
+
+            <a className='abutton' href="https://jnj.sharepoint.com/teams/ProcurementDigitalSolutions/SitePages/Products.aspx">View All Products</a>
           </section>
 
           <section id='Usecases' className="success-section">

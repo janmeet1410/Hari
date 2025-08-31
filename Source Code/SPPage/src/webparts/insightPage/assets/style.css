@@ -1,0 +1,138 @@
+
+     .success-section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe5e5;
+      color: #e63946;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .success-section h2 {
+      font-size: 38px;
+      margin: 0 0 15px;
+      font-weight: 800;
+      color: #222;
+    }
+
+    .success-section p.subtitle {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .case-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      text-align: left;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .case-header {
+      padding: 18px 20px;
+      color: #fff;
+          min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
+
+    .case-header.blue { background: #2d7ff9;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/officebg.jpg); }
+    .case-header.green { background: #27ae60;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/teambg.jpg); }
+    .case-header.purple { background: #8e44ad;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/officebg.jpg); }
+
+    .case-header .icon {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .case-header h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .case-header .category {
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .case-body {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .case-body p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .case-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .case-body ul li {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .case-body ul li::before {
+      content: "●";
+      color: #e63946;
+      font-size: 12px;
+    }
+
+    .case-footer {
+      padding: 15px 20px 20px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      border-color: #e63946;
+      color: #e63946;
+    }

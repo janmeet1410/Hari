@@ -9,10 +9,28 @@
           "manifest": "./src/webparts/banner/BannerWebPart.manifest.json"
         }
       ]
+    },
+    "products-page-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/productsPage/ProductsPageWebPart.js",
+          "manifest": "./src/webparts/productsPage/ProductsPageWebPart.manifest.json"
+        }
+      ]
+    },
+    "insight-page-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/insightPage/InsightPageWebPart.js",
+          "manifest": "./src/webparts/insightPage/InsightPageWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js"
+    "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js",
+    "ProductsPageWebPartStrings": "lib/webparts/productsPage/loc/{locale}.js",
+    "InsightPageWebPartStrings": "lib/webparts/insightPage/loc/{locale}.js"
   }
 }
