@@ -25,6 +25,14 @@
           "manifest": "./src/webparts/insightPage/InsightPageWebPart.manifest.json"
         }
       ]
+    },
+    "sub-banner-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/subBanner/SubBannerWebPart.js",
+          "manifest": "./src/webparts/subBanner/SubBannerWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -33,6 +41,7 @@
     "ProductsPageWebPartStrings": "lib/webparts/productsPage/loc/{locale}.js",
     "InsightPageWebPartStrings": "lib/webparts/insightPage/loc/{locale}.js",
     "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
-    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "SubBannerWebPartStrings": "lib/webparts/subBanner/loc/{locale}.js"
   }
 }

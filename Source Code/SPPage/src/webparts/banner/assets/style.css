@@ -13,7 +13,7 @@
 } */
 
 .hero {
-    height: 330px;
+    height: 260px;
     /* background: linear-gradient(135deg, #d62828, #e63946); */
     /* background: linear-gradient(135deg, #d62828, #e63946), url('../assets/herobanner.jpg'); */
     /* background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/bg.png); */
@@ -34,7 +34,7 @@
 }
 
 .herologo{
-      height: 80px;
+      height: 85px;
     width: auto;
     float: left;
     margin-bottom: 20px;
@@ -63,7 +63,7 @@
 
 .hero p {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
     /* max-width: 600px; */
 }
 
@@ -700,6 +700,7 @@ background: #eb1700;
       padding: 10px;
       border-radius: 12px;
       margin-bottom: 10px;
+      display: none;
     }
 
     .product-card h3 {
