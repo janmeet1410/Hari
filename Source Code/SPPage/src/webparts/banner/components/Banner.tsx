@@ -3,10 +3,20 @@ import styles from './Banner.module.scss';
 import { IBannerProps } from './IBannerProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { Icon } from 'office-ui-fabric-react';
+import * as moment from 'moment';
+import { sp } from '@pnp/sp/presets/all';
 
 require('../assets/style.css');
-
-export default class Banner extends React.Component<IBannerProps, {}> {
+export interface IBannerState {
+  quickLinks:any;
+}
+export default class Banner extends React.Component<IBannerProps, IBannerState> {
+  constructor(props: IBannerProps, state: IBannerState) {
+    super(props);
+    this.state = {
+      quickLinks:[],
+    };
+  }
   public render(): React.ReactElement<IBannerProps> {
     const {
       description,
@@ -83,17 +93,28 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           <div className="circle small"></div>
           <div className="circle large"></div>
         </section>
-  <div className='Quicklinks'  style={{marginTop:'70px', width:'50%'}}>
-          {/* <h2 className='webheaders'>Quick Links</h2> */}
-
+        <div className='Quicklinks'  style={{marginTop:'70px', width:'50%'}}>
           <div className='Quicklinkswrapper'>
- <a href="#products">
+            {
+              this.state.quickLinks.length > 0 && this.state.quickLinks.map((ele,ind) => {
+                let imageURL = ele.AttachmentFiles.length > 0 ? ele.AttachmentFiles[0].ServerRelativeUrl : ele.Icon ? JSON.parse(ele.Icon).serverRelativeUrl : require(`../assets/quicklinks/product.png`);
+                return(
+                  <a href={ele.Link ? ele.Link.Url : "#"}>
+                    <div className='Quicklinkcard'>
+                      <img src={imageURL} />
+                      <p>{ele.Title}</p>
+                    </div>
+                  </a>
+                )
+              })
+            }
+            {/* <a href="#products">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/product.png')} />
                 <p>AI Products</p>
               </div>
             </a>
-             <a href="#Usecases">
+            <a href="#Usecases">
               <div className='Quicklinkcard'>
                 <img src={require('../assets/quicklinks/analysis.png')} />
                 <p>AI Insights</p>
@@ -122,14 +143,6 @@ export default class Banner extends React.Component<IBannerProps, {}> {
                 <img src={require('../assets/quicklinks/digital.png')} />
                 <p>Tech Radar</p>
               </div>
-            </a>
-           
-           
-              {/* <a href="">
-              <div className='Quicklinkcard'>
-                <img src={require('../assets/quicklinks/reputation.png')} />
-                <p>Voice of customer</p>
-              </div>
             </a> */}
           </div>
         </div>
@@ -138,12 +151,6 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
 
         <div className='Pagecontainer'> 
-
-           
-
-       
-
-
           {/* <section className="solutions-section">
             <div className="solutions-container">
               <div className="solutions-text">
@@ -159,8 +166,6 @@ export default class Banner extends React.Component<IBannerProps, {}> {
               </div>
             </div>
           </section> */}
-
-
         </div>
             <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700"}} >Our Portfolio</h2>
 
@@ -448,5 +453,23 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
       </div>
     );
+  }
+
+  public componentDidMount = async () => {
+    await this.getQuickLinks();
+  }
+
+  // get quick links details from Quick Links sharepoint list
+  private getQuickLinks = async () => {
+    try {
+      const QuickLinkdDetails = await sp.web.lists.getByTitle("Quick Links").items.select("Title,ID,Icon,Link,LinkByOrder").expand('AttachmentFiles').orderBy('LinkByOrder', false).get();
+
+      if (QuickLinkdDetails.length > 0) {
+        this.setState({ quickLinks: QuickLinkdDetails });
+      }
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 }

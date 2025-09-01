@@ -17,7 +17,13 @@
     "@microsoft/sp-property-pane": "1.14.0",
     "@microsoft/sp-webpart-base": "1.14.0",
     "@microsoft/sp-lodash-subset": "1.14.0",
-    "@microsoft/sp-office-ui-fabric-core": "1.14.0"
+    "@microsoft/sp-office-ui-fabric-core": "1.14.0",
+    "@pnp/graph": "^2.11.0",
+    "@pnp/sp": "^2.13.0",
+    "@pnp/spfx-controls-react": "^3.7.2",
+    "@pnp/spfx-property-controls": "^3.16.0",
+    "jquery": "^3.6.4",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@types/react": "16.9.51",

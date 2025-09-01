@@ -11,6 +11,12 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import * as strings from 'BannerWebPartStrings';
 import Banner from './components/Banner';
 import { IBannerProps } from './components/IBannerProps';
+import { sp } from "@pnp/sp/presets/all";
+import {
+  PropertyFieldFilePicker,
+  IPropertyFieldFilePickerProps,
+  IFilePickerResult,
+} from "@pnp/spfx-property-controls/lib/PropertyFieldFilePicker";
 
 export interface IBannerWebPartProps {
   description: string;
@@ -23,6 +29,8 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
 
   protected onInit(): Promise<void> {
     this._environmentMessage = this._getEnvironmentMessage();
+    // @pnp/sp inital setup
+    sp.setup({ spfxContext: this.context });
 
     return super.onInit();
   }
