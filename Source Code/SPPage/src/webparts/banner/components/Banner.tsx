@@ -23,7 +23,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
          <div className='infoflex'>
            <div style={{display:'none'}} className="tagline">✨ Procurement AI Lab</div>
-          <h1>PAL - Procurement <span> AI Lab</span></h1>
+          <h1>PAL - Procurement AI Lab</h1>
           <p>
            Procurement Digital Process & Solutions (DPS) - Global Services Procurement
           </p>
@@ -32,13 +32,13 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </p>
          </div>
 
-                <img className='herologo' src={require('../assets/PAL.jpg')} />
+                <img className='herologo' src={require('../assets/palwhite.png')} />
 
           {/* <div className="buttons">
       <a href="#" className="btn btn-primary">Discover Our Work →</a>
       <a href="#" className="btn btn-secondary">▶ Watch Demo</a>
     </div> */}
-          <div className="scroll-indicator"></div>
+          {/* <div className="scroll-indicator"></div> */}
         </section>
 
         <div className='Pagecontainer'> 
@@ -162,15 +162,12 @@ export default class Banner extends React.Component<IBannerProps, {}> {
 
 
         </div>
-            <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700"}} >Our Portfolio</h2>
+            <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px'}} >Our Portfolio</h2>
 
       <div style={{display:'flex'}}>
-        <div style={{width:'50%'}}>
+        <div style={{width:'100%', textAlign:'center'}}>
           <img  style={{width:'95%'}} src={require('../assets/image1.png')} />
         </div>
-        <div style={{width:'50%'}}>
-          <img style={{width:'90%'}} src={require('../assets/mindimg.png')}  />
-          </div>
       </div>
 
         <div className='Pagecontainer'>
@@ -232,45 +229,7 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </section> */}
 
 
-          {/* <section id='tech' className="tech-section">
-            <div className="badge">⚡ Our AI Tech Stack</div>
-            <h2>Tech Radar</h2>
-            <p className="subtitle">
-              Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.
-            </p>
-
-            <div className="tech-grid">
-
-              <div className="tech-card">
-                <h3>DATA WORKFLOW MANAGEMENT​</h3>
-                <div className="tags">
-                  <span className="tag">Data Transformation and Pipelining, ​</span>
-                  <span className="tag">Data Modeling</span>
-                  <span className="tag">CDL Configuration</span>
-                </div>
-              </div>
-
-              <div className="tech-card">
-                <h3>AI & PREDICTIVE ANALYTICS ​</h3>
-                <div className="tags">
-                  <span className="tag">Machine Learning​</span>
-                  <span className="tag">Hypothesis Testing</span>
-                  <span className="tag">Optimization & Clustering Algorithms</span>
-                </div>
-              </div>
-
-
-              <div className="tech-card">
-                <h3>COGNITIVE INTELLIGENCE​</h3>
-                <div className="tags">
-                  <span className="tag">Reasoning ​</span>
-                  <span className="tag">Agentic AI</span>
-                  <span className="tag">Knowledge Graphs</span>
-                  <span className="tag">Deep Learning</span>
-                </div>
-              </div>
-            </div>
-          </section> */}
+   
 
 
           <section id='products' className="products-section">
@@ -413,6 +372,47 @@ export default class Banner extends React.Component<IBannerProps, {}> {
           </section>
 
         </div>
+
+
+               <section id='tech' className="tech-section">
+            <div className="badge">⚡ Our AI Tech Stack</div>
+            <h2>AI Tech Stack</h2>
+            <p className="subtitle">
+              Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.
+            </p>
+
+            <div className="tech-grid">
+
+              <div className="tech-card">
+                <h3>Our AI Tech ​</h3>
+                <div className="tags">
+                  <span className="tag">Data Transformation and Pipelining, ​</span>
+                  <span className="tag">Data Modeling</span>
+                  <span className="tag">CDL Configuration</span>
+                </div>
+              </div>
+
+              <div className="tech-card">
+                <h3>Our Capabilities​</h3>
+                <div className="tags">
+                  <span className="tag">Machine Learning​</span>
+                  <span className="tag">Hypothesis Testing</span>
+                  <span className="tag">Optimization & Clustering Algorithms</span>
+                </div>
+              </div>
+
+
+              <div className="tech-card">
+                <h3>Placeholder​</h3>
+                <div className="tags">
+                  <span className="tag">Reasoning ​</span>
+                  <span className="tag">Agentic AI</span>
+                  <span className="tag">Knowledge Graphs</span>
+                  <span className="tag">Deep Learning</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
            <section id='team' className="about-section">
             <div className="badge"><i className="fas fa-users"></i> Meet Our Team</div>

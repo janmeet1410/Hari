@@ -1,0 +1,120 @@
+[data-automation-id="CanvasZone-SectionContainer"]{
+          max-width: 100%!important;
+}
+[data-automation-id="CanvasZone"], [data-automation-id="CanvasControl"], [data-automation-id="CanvasSection"]{
+      padding: 0 0px !important;
+}
+
+#CommentsWrapper{
+  display: none;
+}
+.hero {
+    height: 260px;
+    /* background: linear-gradient(135deg, #d62828, #e63946); */
+    /* background: linear-gradient(135deg, #d62828, #e63946), url('../assets/herobanner.jpg'); */
+    /* background-image: linear-gradient(rgba(253, 23, 0, 0.8), rgba(253, 23, 0, 0.8)), url(../assets/bg.png); */
+    background-color: #eb1700;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+}
+.infoflex{
+    text-align: center;
+    margin: 0 50px;
+}
+
+.herologo{
+      height: 85px;
+    width: auto;
+    float: left;
+    margin-bottom: 20px;
+        margin-top: -20px;
+            /* margin-right: 100px; */
+}
+.tagline {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: #ffb3b3;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    /* max-width: 600px; */
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: white;
+    color: #e63946;
+}
+
+.btn-primary:hover {
+    background: #f1f1f1;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5px;
+}
+
+.scroll-indicator::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    animation: scroll 1.5s infinite;
+}

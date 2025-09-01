@@ -25,12 +25,21 @@
           "manifest": "./src/webparts/insightPage/InsightPageWebPart.manifest.json"
         }
       ]
+    },
+    "sub-banner-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/subBanner/SubBannerWebPart.js",
+          "manifest": "./src/webparts/subBanner/SubBannerWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js",
     "ProductsPageWebPartStrings": "lib/webparts/productsPage/loc/{locale}.js",
-    "InsightPageWebPartStrings": "lib/webparts/insightPage/loc/{locale}.js"
+    "InsightPageWebPartStrings": "lib/webparts/insightPage/loc/{locale}.js",
+    "SubBannerWebPartStrings": "lib/webparts/subBanner/loc/{locale}.js"
   }
 }
