@@ -63,8 +63,8 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                 <div className="circle small"></div>
                 <div className="circle large"></div>
               </section>
-              <div className='Quicklinks'  style={{paddingTop:'70px', width:'50%',backgroundColor:'#f4f4f4'}}>
-                <h2>Our Resources</h2>
+              <div className='Quicklinks'  style={{paddingTop:'20px', width:'50%',backgroundColor:'#f4f4f4'}}>
+                <h2 className="Resourcestitle">Our Resources</h2>
 
                 <div className='Quicklinkswrapper'>
                   {
@@ -122,18 +122,19 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
       <div className='Pagecontainer'> 
       </div>
-        <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px'}} >Our Portfolio</h2>
+        <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px', color:'#eb1700'}} >Our Portfolio</h2>
       <div style={{display:'flex'}}>
         <div style={{width:'100%', textAlign:'center'}}>
           <img  style={{width:'95%'}} src={require('../assets/image1.png')} />
         </div>
       </div>
-
+<br />
+<div style={{backgroundColor:'#eb1700'}}>
       <div className='Pagecontainer'>
-        <section id='products' className="products-section">
+ <section id='products' className="products-section">
           <div className="badge">⚙️ Our Solutions</div>
-          <h2>{this.props.aiproducttitle}</h2>
-          <p className="subtitle">{this.props.aiproductdescription}</p>
+          <h2 style={{color:'#ffffff'}}>{this.props.aiproducttitle}</h2>
+          <p style={{color:'#ffffff'}} className="subtitle">{this.props.aiproductdescription}</p>
           <div className="product-grid">
             {
               this.state.aiProducts.length > 0 && this.state.aiProducts.map((ele,ind) => {
@@ -152,7 +153,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                       </ul>
                     </div>
                     <div className="buttons">
-                      <a href={ele.LearnMoreButtonLink}><button className="btn btn-primary">Learn More →</button></a>
+                      <a href={ele.LearnMoreButtonLink}><button className="btn btn-primary" style={{backgroundColor:'#eb1700'}}>Learn More →</button></a>
                       <a href={ele.ViewDemoButtonLink}><button className="btn btn-outline">View Demo</button></a>
                     </div>
                   </div>
@@ -160,8 +161,12 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
               })
             }
           </div>
-          <a className='abutton' href="https://jnj.sharepoint.com/teams/ProcurementDigitalSolutions/SitePages/Products.aspx">View All Products</a>
+          <a className='abutton' style={{color:'#ffffff',borderColor:'#ffffff'}} href="https://jnj.sharepoint.com/teams/ProcurementDigitalSolutions/SitePages/Products.aspx">View All Products</a>
         </section>
+      </div>
+      </div>
+      <div className='Pagecontainer'>
+       
 
         <section id='Usecases' className="success-section">
           <div className="badge">📌 Insights</div>
@@ -190,6 +195,8 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
               })
             }
           </div>
+          <a className='abutton'  href="https://jnj.sharepoint.com/teams/ProcurementDigitalSolutions/SitePages/Insight%20Usecases.aspx">View All Insight Usecases</a>
+
         </section>
       </div>
 
@@ -264,7 +271,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
   // get ai products details from AI Products sharepoint list
   private getAIProducts = async () => {
-    await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink").top(4999).orderBy("Modified", false).top(3).get().then((data) => {
+    await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink").top(4999).orderBy("Modified", false).top(4).get().then((data) => {
       let ProductArr = [];
       if (data.length > 0) {
         data.map((product) => {

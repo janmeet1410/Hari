@@ -34,7 +34,7 @@
 }
 
 .herologo{
-      height: 85px;
+      height: 100px;
     width: auto;
     float: left;
     margin-bottom: 20px;
@@ -357,7 +357,16 @@
       font-size: 36px;
       font-weight: 700;
       margin-bottom: 15px;
+          color: #eb1700;
     }
+        .Resourcestitle {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 50px;
+          color: #eb1700;
+          text-align: center;
+    }
+
 
     .mission-section p.subtitle {
       font-size: 16px;
@@ -672,7 +681,7 @@ background: #eb1700;
 
     .products-section .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
       gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
@@ -862,7 +871,7 @@ background: #eb1700;
 
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 0fr));
       gap: 30px;
       max-width: 1100px;
       margin: 0 auto;
@@ -877,6 +886,7 @@ background: #eb1700;
       display: flex;
       flex-direction: column;
       transition: transform 0.3s ease;
+      max-width: 340px;
     }
 
     .case-card:hover {
@@ -892,9 +902,9 @@ background: #eb1700;
     justify-content: space-around;
     }
 
-    .case-header.blue { background: #2d7ff9;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/officebg.jpg); }
-    .case-header.green { background: #27ae60;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/teambg.jpg); }
-    .case-header.purple { background: #8e44ad;     background-image: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.8)), url(../assets/officebg.jpg); }
+    .case-header.blue { background: #eb1700;     }
+    .case-header.green { background: #eb1700;    }
+    .case-header.purple { background: #eb1700;   }
 
     .case-header .icon {
       font-size: 18px;

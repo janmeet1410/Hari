@@ -16,7 +16,7 @@ export default class SubBanner extends React.Component<ISubBannerProps, {}> {
     } = this.props;
 
     return (
-      <section className="hero">
+      <section className="herosub">
                 <img className='herologo' style={{width:'270px', height:'auto'}} src={require('../assets/jnj.png')} />
 
          <div className='infoflex'>

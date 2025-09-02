@@ -8,7 +8,7 @@
 #CommentsWrapper{
   display: none;
 }
-.hero {
+.herosub {
     height: 210px;
     /* background: linear-gradient(135deg, #d62828, #e63946); */
     /* background: linear-gradient(135deg, #d62828, #e63946), url('../assets/herobanner.jpg'); */
@@ -46,18 +46,18 @@
     margin-bottom: 20px;
 }
 
-.hero h1 {
+.herosub h1 {
     font-size: 42px;
     font-weight: 800;
     margin: 0;
     line-height: 1.2;
 }
 
-.hero h1 span {
+.herosub h1 span {
     color: #ffb3b3;
 }
 
-.hero p {
+.herosub p {
     margin-top: 20px;
     font-size: 20px;
     /* max-width: 600px; */
