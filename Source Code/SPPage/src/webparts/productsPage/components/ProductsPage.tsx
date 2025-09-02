@@ -41,7 +41,7 @@ export default class ProductsPage extends React.Component<IProductsPageProps, IP
                         <a href={ele.ViewDemoButtonLink}><button className="btn btn-outline">View Demo</button></a>
                       </div>
                     </div>
-                  )
+                  );
                 })
               }
               </div>

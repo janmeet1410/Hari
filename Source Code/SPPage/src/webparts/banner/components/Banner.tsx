@@ -63,7 +63,9 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                 <div className="circle small"></div>
                 <div className="circle large"></div>
               </section>
-              <div className='Quicklinks'  style={{marginTop:'70px', width:'50%'}}>
+              <div className='Quicklinks'  style={{paddingTop:'70px', width:'50%',backgroundColor:'#f4f4f4'}}>
+                <h2>Our Resources</h2>
+
                 <div className='Quicklinkswrapper'>
                   {
                     this.state.quickLinks.length > 0 && this.state.quickLinks.map((ele,ind) => {
@@ -75,7 +77,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                             <p>{ele.Title}</p>
                           </div>
                         </a>
-                      )
+                      );
                     })
                   }
                   {/* <a href="#products">
@@ -154,7 +156,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                       <a href={ele.ViewDemoButtonLink}><button className="btn btn-outline">View Demo</button></a>
                     </div>
                   </div>
-                )
+                );
               })
             }
           </div>
@@ -184,7 +186,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                       <a href={el.CaseStudyLink}><button className="btn">Read Case Study →</button></a>
                     </div>
                   </div>
-                )
+                );
               })
             }
           </div>

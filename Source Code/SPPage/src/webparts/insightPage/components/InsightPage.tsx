@@ -4,7 +4,7 @@ import { IInsightPageProps } from './IInsightPageProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { sp } from '@pnp/sp/presets/all';
 
-require('../../banner/assets/style.css')
+require('../../banner/assets/style.css');
 export interface IInsightPageState {
   aiInsights:any;
 }
