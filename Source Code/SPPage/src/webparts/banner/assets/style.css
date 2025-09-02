@@ -731,10 +731,10 @@ background: #eb1700;
       color: #fff;
     }
 
-    .status.popular { background: #e63946; }
+    /* .status.popular { background: #e63946; }
     .status.new { background: #2ecc71; }
     .status.enterprise { background: #9b59b6; }
-    .status.beta { background: #f39c12; }
+    .status.beta { background: #f39c12; } */
 
     .product-card p {
       font-size: 15px;

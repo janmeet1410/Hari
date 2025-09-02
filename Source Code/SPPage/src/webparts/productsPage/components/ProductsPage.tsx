@@ -2,92 +2,78 @@ import * as React from 'react';
 import styles from './ProductsPage.module.scss';
 import { IProductsPageProps } from './IProductsPageProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import { sp } from '@pnp/sp/presets/all';
 
 require('../assets/style.css');
-
-export default class ProductsPage extends React.Component<IProductsPageProps, {}> {
+const backgroundColors = ["#e63946", "#2ecc71", "#9b59b6"];
+export interface IProductsPageState {
+  aiProducts:any;
+}
+export default class ProductsPage extends React.Component<IProductsPageProps, IProductsPageState> {
+  constructor(props: IProductsPageProps, state: IProductsPageState) {
+      super(props);
+      this.state = {
+        aiProducts:[],
+      };
+    }
   public render(): React.ReactElement<IProductsPageProps> {
-    const {
-      description,
-      isDarkTheme,
-      environmentMessage,
-      hasTeamsContext,
-      userDisplayName
-    } = this.props;
-
     return (
-              <section id='products' className="products-section">
-            {/* <div className="badge">⚙️ Our Solutions</div> */}
-            {/* <h2>AI Products - By PAL </h2> */}
-            {/* <p className="subtitle">
-              Innovative software solutions designed to solve complex business challenges and accelerate digital transformation for companies worldwide.
-            </p> */}
-
-            <div className="product-grid">
-              <div className="product-card">
-                <div className="icon">⚡</div>
-                <span className="status popular">Popular</span>
-                <h3>DataFlow Pro</h3>
-                <div className="category">Data Analytics</div>
-                <p>Advanced data pipeline management and analytics platform for enterprise-scale data processing.</p>
-                <div className="features">
-                  <strong>Key Features:</strong>
-                  <ul>
-                    <li>Real-time Processing</li>
-                    <li>Auto-scaling</li>
-                    <li>Custom Dashboards</li>
-                    <li>API Integration</li>
-                  </ul>
-                </div>
-                <div className="buttons">
-                  <button className="btn btn-primary">Learn More →</button>
-                  <button className="btn btn-outline">View Demo</button>
-                </div>
+            <section id='products' className="products-section">
+              <div className="product-grid">
+              {
+                this.state.aiProducts.length > 0 && this.state.aiProducts.map((ele,ind) => {
+                  const bgColor = backgroundColors[ind % backgroundColors.length];
+                  return(
+                    <div className="product-card">
+                      <div className="icon">⚡</div>
+                      <span className="status popular" style={{background:bgColor}}>{ele.Category}</span>
+                      <h3>{ele.Title}</h3>
+                      <div className="category">{ele.Department}</div>
+                      <p>{ele.Description}</p>
+                      <div className="features">
+                        <strong>Key Features:</strong>
+                        <ul>
+                          <p dangerouslySetInnerHTML={{ __html: ele.KeyFeatures}}></p>
+                        </ul>
+                      </div>
+                      <div className="buttons">
+                        <a href={ele.LearnMoreButtonLink}><button className="btn btn-primary">Learn More →</button></a>
+                        <a href={ele.ViewDemoButtonLink}><button className="btn btn-outline">View Demo</button></a>
+                      </div>
+                    </div>
+                  )
+                })
+              }
               </div>
-
-              <div className="product-card">
-                <div className="icon">🛡️</div>
-                <span className="status new">New</span>
-                <h3>SecureVault</h3>
-                <div className="category">Security</div>
-                <p>Comprehensive cybersecurity solution with threat detection, prevention, and incident response.</p>
-                <div className="features">
-                  <strong>Key Features:</strong>
-                  <ul>
-                    <li>24/7 Monitoring</li>
-                    <li>AI Threat Detection</li>
-                    <li>Compliance Ready</li>
-                    <li>Multi-factor Auth</li>
-                  </ul>
-                </div>
-                <div className="buttons">
-                  <button className="btn btn-primary">Learn More →</button>
-                  <button className="btn btn-outline">View Demo</button>
-                </div>
-              </div>
-
-              <div className="product-card">
-                <div className="icon">🌐</div>
-                <span className="status enterprise">Enterprise</span>
-                <h3>CloudConnect</h3>
-                <div className="category">Cloud Solutions</div>
-                <p>Seamless cloud migration and management platform with automated deployment pipelines.</p>
-                <div className="features">
-                  <strong>Key Features:</strong>
-                  <ul>
-                    <li>Multi-cloud Support</li>
-                    <li>Cost Optimization</li>
-                    <li>Automated Scaling</li>
-                    <li>Zero Downtime</li>
-                  </ul>
-                </div>
-                <div className="buttons">
-                  <button className="btn btn-primary">Learn More →</button>
-                  <button className="btn btn-outline">View Demo</button>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
     );
   }
+
+  public componentDidMount = async () => {
+    await this.getAIProducts();
+  }
+
+  // get ai products details from AI Products sharepoint list
+    private getAIProducts = async () => {
+      await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink").top(4999).orderBy("Modified", false).get().then((data) => {
+        let ProductArr = [];
+        if (data.length > 0) {
+          data.map((product) => {
+            let ProductJson = {};
+            ProductJson["ID"] = product.ID;
+            ProductJson["Title"] = product.Title ? product.Title : '';
+            ProductJson["Description"] = product.Description ? product.Description : '';
+            ProductJson["KeyFeatures"] = product.KeyFeatures ? product.KeyFeatures :'';
+            ProductJson["Category"] = product.Category ? product.Category : '';
+            ProductJson["Department"] = product.Department ? product.Department : '';
+            ProductJson["LearnMoreButtonLink"] = product.LearnMoreButtonLink ? product.LearnMoreButtonLink.Url : '#';
+            ProductJson["ViewDemoButtonLink"] = product.ViewDemoButtonLink ? product.ViewDemoButtonLink.Url : '#';
+            ProductArr.push(ProductJson);
+          });
+          this.setState({ aiProducts: ProductArr });
+        }
+      }).catch((err) => {
+        console.log(err);
+      });
+    }
 }

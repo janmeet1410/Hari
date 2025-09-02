@@ -11,6 +11,7 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import * as strings from 'InsightPageWebPartStrings';
 import InsightPage from './components/InsightPage';
 import { IInsightPageProps } from './components/IInsightPageProps';
+import { sp } from "@pnp/sp/presets/all";
 
 export interface IInsightPageWebPartProps {
   description: string;
@@ -23,6 +24,8 @@ export default class InsightPageWebPart extends BaseClientSideWebPart<IInsightPa
 
   protected onInit(): Promise<void> {
     this._environmentMessage = this._getEnvironmentMessage();
+    // @pnp/sp inital setup
+    sp.setup({ spfxContext: this.context });
 
     return super.onInit();
   }

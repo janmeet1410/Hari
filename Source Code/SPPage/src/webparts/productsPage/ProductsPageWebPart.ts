@@ -11,6 +11,7 @@ import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import * as strings from 'ProductsPageWebPartStrings';
 import ProductsPage from './components/ProductsPage';
 import { IProductsPageProps } from './components/IProductsPageProps';
+import { sp } from "@pnp/sp/presets/all";
 
 export interface IProductsPageWebPartProps {
   description: string;
@@ -23,6 +24,8 @@ export default class ProductsPageWebPart extends BaseClientSideWebPart<IProducts
 
   protected onInit(): Promise<void> {
     this._environmentMessage = this._getEnvironmentMessage();
+    // @pnp/sp inital setup
+    sp.setup({ spfxContext: this.context });
 
     return super.onInit();
   }
