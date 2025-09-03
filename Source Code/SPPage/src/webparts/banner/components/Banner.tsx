@@ -69,6 +69,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
               </section>
               <div className='Quicklinks'  style={{paddingTop:'20px', width:'50%',backgroundColor:'#f4f4f4'}}>
                 <h2 className="Resourcestitle">Our Resources</h2>
+                <p className="Resourcessubtitle">{this.props.QuickAccessDescription}</p>
 
                 <div className='Quicklinkswrapper'>
                   {
@@ -169,9 +170,8 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
         </section>
       </div>
       </div>
-      <div className='Pagecontainer'>
-       
-
+      <div style={{backgroundColor:'rgb(244, 244, 244)'}}>
+ <div className='Pagecontainer'>
         <section id='Usecases' className="success-section">
           <div className="badge">📌 Insights</div>
           <h2>{this.props.aiinsighttitle}</h2>
@@ -203,6 +203,8 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
         </section>
       </div>
+      </div>
+     
 
 
         <section id='tech' className="tech-section">
@@ -239,11 +241,11 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
             </div>
         </section>
 
-        <section id='team' className="about-section">
+        {/* <section id='team' className="about-section">
           <div className="badge"><i className="fas fa-users"></i> Meet Our Team</div>
           <h2>{this.props.ourteamtitle}</h2>
           <p>{this.props.ourteamdesription}</p>
-        </section>
+        </section> */}
 
       </div>
     );
@@ -296,7 +298,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
   // get ai insights details from AI Insights sharepoint list
   private getAIInsights = async () => {
-    await sp.web.lists.getByTitle("AI Insights").items.select("ID,Title,Description,KeyFeatures,Category,Department,CaseStudyLink").top(4999).orderBy("Modified", false).top(3).get().then((data) => {
+    await sp.web.lists.getByTitle("AI Insights").items.select("ID,Title,Description,KeyFeatures,Category,Department,CaseStudyLink").top(4999).orderBy("Modified", false).top(4).get().then((data) => {
       let InsighttArr = [];
       if (data.length > 0) {
         data.map((insight) => {

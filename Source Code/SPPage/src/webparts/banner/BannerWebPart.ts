@@ -40,6 +40,7 @@ export interface IBannerWebPartProps {
   aistacktitle:string;
   aistackdesription:string;
   portfolioImage:IFilePickerResult;
+  QuickAccessDescription:string;
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
@@ -84,6 +85,7 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
         aistacktitle: this.properties.aistacktitle ?  this.properties.aistacktitle : "AI Tech Stack",
         aistackdesription: this.properties.aistackdesription ? this.properties.aistackdesription : "Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.",
         portfolioImage: this.properties.portfolioImage,
+        QuickAccessDescription:this.properties.QuickAccessDescription
       }
     );
 
@@ -184,6 +186,15 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                   }),
                 ]
             },
+            {
+              groupName: "Quick Access",
+                isCollapsed: true,
+                groupFields: [
+                  PropertyPaneTextField("QuickAccessDescription", {
+                    label: "Quick Access Description",
+                  }),
+                ]
+              },
             {
               groupName: "Our Portfolio",
                 isCollapsed: true,

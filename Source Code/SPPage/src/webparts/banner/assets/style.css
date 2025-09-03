@@ -362,11 +362,18 @@
         .Resourcestitle {
       font-size: 36px;
       font-weight: 700;
-      margin-bottom: 50px;
+      margin-bottom: 12px;
           color: #eb1700;
           text-align: center;
     }
-
+    .Resourcessubtitle{
+    font-size: 16px;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 88px;
+    }
 
     .mission-section p.subtitle {
       font-size: 16px;
@@ -618,14 +625,14 @@ background: #eb1700;
       color: #222;
     }
 
-    .tech-section .tech-card h3::before {
+    /* .tech-section .tech-card h3::before {
       content: "";
       display: inline-block;
       width: 14px;
       height: 12px;
       background: #e63946;
       border-radius: 50%;
-    }
+    } */
 
     .tech-section .tags {
       display: flex;
@@ -871,7 +878,7 @@ background: #eb1700;
 
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 0fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
       gap: 30px;
       max-width: 1100px;
       margin: 0 auto;
