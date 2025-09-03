@@ -23,5 +23,5 @@ export interface IBannerProps {
   ourteamdesription:any;
   aistacktitle:any;
   aistackdesription:any;
-
+  portfolioImage:any;
 }

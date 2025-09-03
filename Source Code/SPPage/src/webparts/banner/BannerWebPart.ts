@@ -39,6 +39,7 @@ export interface IBannerWebPartProps {
   ourteamdesription:string;
   aistacktitle:string;
   aistackdesription:string;
+  portfolioImage:IFilePickerResult;
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
@@ -82,6 +83,7 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
         ourteamdesription:this.properties.ourteamdesription ? this.properties.ourteamdesription : "We are a passionate team of innovators, designers, and engineers committed to pushing the boundaries of what's possible in technology and design.",
         aistacktitle: this.properties.aistacktitle ?  this.properties.aistacktitle : "AI Tech Stack",
         aistackdesription: this.properties.aistackdesription ? this.properties.aistackdesription : "Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.",
+        portfolioImage: this.properties.portfolioImage,
       }
     );
 
@@ -179,6 +181,30 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                     label: "Mission Description 3",
                     multiline: true,
                     rows: 3 // Number of visible rows
+                  }),
+                ]
+            },
+            {
+              groupName: "Our Portfolio",
+                isCollapsed: true,
+                groupFields: [
+                  PropertyFieldFilePicker("portfolioImage", {
+                    context: this.context,
+                    onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+                    properties: this.properties,
+                    onSave: (e: IFilePickerResult) => {
+                      console.log(e);
+                      this.properties.portfolioImage = e;
+                    },
+                    onChanged: (e: IFilePickerResult) => {
+                      console.log(e);
+                      this.properties.portfolioImage = e;
+                    },
+                    buttonLabel: "Upload Image",
+                    label: "Our Portfolio Image",
+                    key: "FilePickerID",
+                    filePickerResult: this.properties.portfolioImage,
+                    hideLocalUploadTab: true,
                   }),
                 ]
             },

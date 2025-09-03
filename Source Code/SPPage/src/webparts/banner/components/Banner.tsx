@@ -13,6 +13,7 @@ export interface IBannerState {
   quickLinks:any;
   aiProducts:any;
   aiInsights:any;
+  aiTechstacks:any;
 }
 export default class Banner extends React.Component<IBannerProps, IBannerState> {
   constructor(props: IBannerProps, state: IBannerState) {
@@ -21,9 +22,12 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
       quickLinks:[],
       aiProducts:[],
       aiInsights:[],
+      aiTechstacks:[],
     };
   }
   public render(): React.ReactElement<IBannerProps> {
+
+    const PortfolioImageLink = this.props.portfolioImage == undefined ? require('../assets/image1.png') : this.props.portfolioImage.fileAbsoluteUrl;
 
     return (
       <div id='Home'>
@@ -125,7 +129,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
         <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px', color:'#eb1700'}} >Our Portfolio</h2>
       <div style={{display:'flex'}}>
         <div style={{width:'100%', textAlign:'center'}}>
-          <img  style={{width:'95%'}} src={require('../assets/image1.png')} />
+          <img  style={{width:'95%'}} src={PortfolioImageLink} />
         </div>
       </div>
 <br />
@@ -207,36 +211,73 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
           <p className="subtitle">{this.props.aistackdesription}</p>
 
           <div className="tech-grid">
-
-            <div className="tech-card">
-              <h3>Our AI Tech ​</h3>
-              <div className="tags">
-                <span className="tag">Data Transformation and Pipelining, ​</span>
-                <span className="tag">Data Modeling</span>
-                <span className="tag">CDL Configuration</span>
+            {
+              this.state.aiTechstacks.length > 0 && this.state.aiTechstacks.map((element,ind) => {
+                return(
+                  <div className="tech-card">
+                    <h3>{element.Title}​</h3>
+                    <div className="features">
+                    <ul>
+                    <p dangerouslySetInnerHTML={{ __html: element.Description}}></p>
+                    </ul>
+                    </div>
+                  </div>
+                )
+              })
+            }
+            {/* <div className="tech-card">
+              <h3>Data and Infrastructure Layer​</h3>
+              <div className="features">
+              <ul>
+                <li>Cloud Plateforms: Azure</li>
+                <li>Database & Storage: SQL, Data Lakes</li>
+                <li>VectorDatabase: Azure AI Search, chrome DB</li>
+                <li>Data Pipeline: Databricks</li>
+              </ul>
               </div>
             </div>
 
             <div className="tech-card">
-              <h3>Our Capabilities​</h3>
+              <h3>Data and Infrastructure Layer​</h3>
+              <ul>
+                <li>Cloud Plateforms: Azure</li>
+                <li>Database & Storage: SQL, Data Lakes</li>
+                <li>VectorDatabase: Azure AI Search, chrome DB</li>
+                <li>Data Pipeline: Databricks</li>
+              </ul>
+            </div>
+
+            <div className="tech-card">
+              <h3>Data and Infrastructure Layer​</h3>
+              <ul>
+                <li>Cloud Plateforms: Azure</li>
+                <li>Database & Storage: SQL, Data Lakes</li>
+                <li>VectorDatabase: Azure AI Search, chrome DB</li>
+                <li>Data Pipeline: Databricks</li>
+              </ul>
+            </div>
+
+            <div className="tech-card">
+              <h3>Data and Infrastructure Layer​</h3>
+              <ul>
+                <li>Cloud Plateforms: Azure</li>
+                <li>Database & Storage: SQL, Data Lakes</li>
+                <li>VectorDatabase: Azure AI Search, chrome DB</li>
+                <li>Data Pipeline: Databricks</li>
+              </ul>
+            </div> */}
+
+            {/* <div className="tech-card">
+              <h3>Model Developement & Training / AI Models & Service​</h3>
               <div className="tags">
                 <span className="tag">Machine Learning​</span>
                 <span className="tag">Hypothesis Testing</span>
                 <span className="tag">Optimization & Clustering Algorithms</span>
               </div>
-            </div>
+            </div> */}
 
 
-            <div className="tech-card">
-              <h3>Placeholder​</h3>
-              <div className="tags">
-                <span className="tag">Reasoning ​</span>
-                <span className="tag">Agentic AI</span>
-                <span className="tag">Knowledge Graphs</span>
-                <span className="tag">Deep Learning</span>
-              </div>
             </div>
-          </div>
         </section>
 
         <section id='team' className="about-section">
@@ -253,6 +294,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
     await this.getQuickLinks();
     await this.getAIProducts();
     await this.getAIInsights();
+    await this.getAITechStacks();
   }
 
   // get quick links details from Quick Links sharepoint list
@@ -310,6 +352,25 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
           InsighttArr.push(InsightJson);
         });
         this.setState({ aiInsights: InsighttArr });
+      }
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  // get ai tech stack details from AI Tech Stack sharepoint list
+  private getAITechStacks = async () => {
+    await sp.web.lists.getByTitle("AI Tech Stack").items.select("ID,Title,Description").top(4999).top(4).get().then((data) => {
+      let TechStackArr = [];
+      if (data.length > 0) {
+        data.map((insight) => {
+          let TechStackJson = {};
+          TechStackJson["ID"] = insight.ID;
+          TechStackJson["Title"] = insight.Title ? insight.Title : '';
+          TechStackJson["Description"] = insight.Description ? insight.Description : '';
+          TechStackArr.push(TechStackJson);
+        });
+        this.setState({ aiTechstacks: TechStackArr });
       }
     }).catch((err) => {
       console.log(err);
