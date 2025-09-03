@@ -225,47 +225,6 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                 )
               })
             }
-            {/* <div className="tech-card">
-              <h3>Data and Infrastructure Layer​</h3>
-              <div className="features">
-              <ul>
-                <li>Cloud Plateforms: Azure</li>
-                <li>Database & Storage: SQL, Data Lakes</li>
-                <li>VectorDatabase: Azure AI Search, chrome DB</li>
-                <li>Data Pipeline: Databricks</li>
-              </ul>
-              </div>
-            </div>
-
-            <div className="tech-card">
-              <h3>Data and Infrastructure Layer​</h3>
-              <ul>
-                <li>Cloud Plateforms: Azure</li>
-                <li>Database & Storage: SQL, Data Lakes</li>
-                <li>VectorDatabase: Azure AI Search, chrome DB</li>
-                <li>Data Pipeline: Databricks</li>
-              </ul>
-            </div>
-
-            <div className="tech-card">
-              <h3>Data and Infrastructure Layer​</h3>
-              <ul>
-                <li>Cloud Plateforms: Azure</li>
-                <li>Database & Storage: SQL, Data Lakes</li>
-                <li>VectorDatabase: Azure AI Search, chrome DB</li>
-                <li>Data Pipeline: Databricks</li>
-              </ul>
-            </div>
-
-            <div className="tech-card">
-              <h3>Data and Infrastructure Layer​</h3>
-              <ul>
-                <li>Cloud Plateforms: Azure</li>
-                <li>Database & Storage: SQL, Data Lakes</li>
-                <li>VectorDatabase: Azure AI Search, chrome DB</li>
-                <li>Data Pipeline: Databricks</li>
-              </ul>
-            </div> */}
 
             {/* <div className="tech-card">
               <h3>Model Developement & Training / AI Models & Service​</h3>
