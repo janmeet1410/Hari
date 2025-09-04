@@ -384,12 +384,44 @@
 
     .mission-cards {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-bottom: 50px;
+   justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
     }
 
+    .missionletters{
+      height: 50px;
+    width: 50px;
+    color: #ffffff;
+    background-color: #eb1700;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    }
+
+    .CEOcard {
+    background: #eb1700;
+    width: max-content;
+    margin: 0 auto;
+    color: #ffff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+.CEOcard h3 {
+    font-size: 24px;
+    margin: 0;
+}
+.CEOcard p {
+    font-size: 16px;
+}
     .mission-card {
 background: #eb1700;
     padding: 0px 25px;
@@ -399,6 +431,7 @@ background: #eb1700;
     text-align: center;
     color: #fff;
     backdrop-filter: blur(4px);
+    flex: 1 1 22%;
     }
 
     .mission-card i {
@@ -727,6 +760,7 @@ background: #eb1700;
       align-items: center;
       gap: 10px;
       color: #222;
+      margin-top: 20px;
     }
 
     .product-card .category {
@@ -986,5 +1020,6 @@ background: #eb1700;
 
     .stackimage img{
       height: 170px;
-      width: 232px;
+      width: 100%;
+      object-fit: cover;
   }

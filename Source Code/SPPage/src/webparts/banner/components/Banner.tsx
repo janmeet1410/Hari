@@ -47,7 +47,20 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
               <section style={{width:'50%'}} id='mission' className="mission-section">
                 <h2>{this.props.ourmissiontitle}</h2>
                 <p className="subtitle">{this.props.ourmissiondescription}</p>
+                <div className='CEOcard'>
+                  <h3>{this.props.CEOCardTitle}</h3>
+                  <p>{this.props.CEOCarddescription}</p>
+                </div>
                 <div className="mission-cards">
+                  {/* <div className="mission-card" style={{backgroundColor:'transparent'}}>
+                    <div className='missionletters'>C</div>
+                    </div>        
+                                      <div className="mission-card" style={{backgroundColor:'transparent'}}>
+                    <div className='missionletters'>E</div>
+                    </div>        
+                                      <div className="mission-card" style={{backgroundColor:'transparent'}}>
+                    <div className='missionletters'>O</div>
+                    </div>         */}
                   <div className="mission-card">
                     <i className="fas fa-bullseye"></i>
                     <h3>{this.props.missionlabel1}</h3>
@@ -92,6 +105,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
       <div className='Pagecontainer'> 
       </div>
         <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px', color:'#eb1700'}} >{this.props.ourportfoliotitle}</h2>
+     <p  style={{fontSize:'16px',lineHeight:'1.6', marginLeft:'23px',marginBottom:'25px'}}>{this.props.ourportfoliodescription}</p>
       <div style={{display:'flex'}}>
         <div style={{width:'100%', textAlign:'center'}}>
           <img  style={{width:'95%'}} src={PortfolioImageLink} />
@@ -171,10 +185,10 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
      
 
 
-        <section id='tech' className="tech-section">
-          <div className="badge">⚡ Our AI Tech Stack</div>
-          <h2>{this.props.aistacktitle}</h2>
-          <p className="subtitle">{this.props.aistackdesription}</p>
+        <section id='tech' className="tech-section" style={{backgroundColor:'rgb(235, 23, 0)'}}>
+          <div className="badge" >⚡ Our AI Tech Stack</div>
+          <h2 style={{color:'#ffffff'}}>{this.props.aistacktitle}</h2>
+          <p style={{color:'#ffffff'}} className="subtitle">{this.props.aistackdesription}</p>
 
           <div className="tech-grid">
             {

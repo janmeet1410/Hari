@@ -42,6 +42,9 @@ export interface IBannerWebPartProps {
   portfolioImage:IFilePickerResult;
   QuickAccessDescription:string;
   ourportfoliotitle:string;
+  ourportfoliodescription:string;
+    CEOCardTitle:string;
+  CEOCarddescription:string;
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
@@ -87,7 +90,10 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
         aistackdesription: this.properties.aistackdesription ? this.properties.aistackdesription : "Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.",
         portfolioImage: this.properties.portfolioImage,
         QuickAccessDescription:this.properties.QuickAccessDescription,
-        ourportfoliotitle: this.properties.ourportfoliotitle ?  this.properties.ourportfoliotitle : "Our Portfolio"
+        ourportfoliotitle: this.properties.ourportfoliotitle ?  this.properties.ourportfoliotitle : "Our Portfolio",
+        ourportfoliodescription:this.properties.ourportfoliodescription? this.properties.ourportfoliodescription : 'Our portfoli description',
+          CEOCardTitle:this.properties.CEOCardTitle ? this.properties.CEOCardTitle : 'C.E.0' ,
+  CEOCarddescription:this.properties.CEOCarddescription ? this.properties.CEOCarddescription : 'Compete.Execute.Optimize' ,
       }
     );
 
@@ -165,6 +171,12 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                   PropertyPaneTextField("missionlabel1", {
                     label: "Mission Label 1",
                   }),
+                   PropertyPaneTextField("CEOCardTitle", {
+                    label: "CEO Card Title",
+                  }),
+                   PropertyPaneTextField("CEOCarddescription", {
+                    label: "CEO Card Description",
+                  }),
                   PropertyPaneTextField("missiondescription1", {
                     label: "Mission Description 1",
                     multiline: true,
@@ -203,6 +215,9 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                 groupFields: [
                   PropertyPaneTextField("ourportfoliotitle", {
                     label: "Our Portfolio Title",
+                  }),
+                  PropertyPaneTextField("ourportfoliodescription", {
+                    label: "Our Portfolio Desciption",
                   }),
                   PropertyFieldFilePicker("portfolioImage", {
                     context: this.context,

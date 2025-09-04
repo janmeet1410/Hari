@@ -26,4 +26,9 @@ export interface IBannerProps {
   portfolioImage:any;
   QuickAccessDescription:any;
   ourportfoliotitle:any;
+  ourportfoliodescription:any;
+  CEOCardTitle:any;
+  CEOCarddescription:any;
+
+
 }
