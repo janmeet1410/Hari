@@ -41,6 +41,7 @@ export interface IBannerWebPartProps {
   aistackdesription:string;
   portfolioImage:IFilePickerResult;
   QuickAccessDescription:string;
+  ourportfoliotitle:string;
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
@@ -85,7 +86,8 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
         aistacktitle: this.properties.aistacktitle ?  this.properties.aistacktitle : "AI Tech Stack",
         aistackdesription: this.properties.aistackdesription ? this.properties.aistackdesription : "Our technology stack and tools that power innovation and drive exceptional results across every project we deliver.",
         portfolioImage: this.properties.portfolioImage,
-        QuickAccessDescription:this.properties.QuickAccessDescription
+        QuickAccessDescription:this.properties.QuickAccessDescription,
+        ourportfoliotitle: this.properties.ourportfoliotitle ?  this.properties.ourportfoliotitle : "Our Portfolio"
       }
     );
 
@@ -199,6 +201,9 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
               groupName: "Our Portfolio",
                 isCollapsed: true,
                 groupFields: [
+                  PropertyPaneTextField("ourportfoliotitle", {
+                    label: "Our Portfolio Title",
+                  }),
                   PropertyFieldFilePicker("portfolioImage", {
                     context: this.context,
                     onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
@@ -261,20 +266,20 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                   }),
                 ]
             },
-            {
-              groupName: "Our Team",
-                isCollapsed: true,
-                groupFields: [
-                  PropertyPaneTextField("ourteamtitle", {
-                    label: "Our Team Title",
-                  }),
-                  PropertyPaneTextField("ourteamdesription", {
-                    label: "Our Team Description",
-                    multiline: true,
-                    rows: 3 // Number of visible rows
-                  }),
-                ]
-            },
+            // {
+            //   groupName: "Our Team",
+            //     isCollapsed: true,
+            //     groupFields: [
+            //       PropertyPaneTextField("ourteamtitle", {
+            //         label: "Our Team Title",
+            //       }),
+            //       PropertyPaneTextField("ourteamdesription", {
+            //         label: "Our Team Description",
+            //         multiline: true,
+            //         rows: 3
+            //       }),
+            //     ]
+            // },
           ]
         }
       ]

@@ -85,49 +85,13 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                       );
                     })
                   }
-                  {/* <a href="#products">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/quicklinks/product.png')} />
-                      <p>AI Products</p>
-                    </div>
-                  </a>
-                  <a href="#Usecases">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/quicklinks/analysis.png')} />
-                      <p>AI Insights</p>
-                    </div>
-                  </a>
-                  <a href="#team">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/team.png')} />
-                      <p>News Letters</p>
-                    </div>
-                  </a>
-                  <a href="#team">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/team.png')} />
-                      <p>Submit Demands</p>
-                    </div>
-                  </a>
-                  <a href="#capabilities">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/quicklinks/capability.png')} />
-                      <p>Our Capabilities</p>
-                    </div>
-                  </a>
-                  <a href="#tech">
-                    <div className='Quicklinkcard'>
-                      <img src={require('../assets/quicklinks/digital.png')} />
-                      <p>Tech Radar</p>
-                    </div>
-                  </a> */}
                 </div>
               </div>
       </div>
 
       <div className='Pagecontainer'> 
       </div>
-        <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px', color:'#eb1700'}} >Our Portfolio</h2>
+        <h2 style={{fontSize: "36px", margin: "0 0 15px", fontWeight: "700", marginLeft:'20px', color:'#eb1700'}} >{this.props.ourportfoliotitle}</h2>
       <div style={{display:'flex'}}>
         <div style={{width:'100%', textAlign:'center'}}>
           <img  style={{width:'95%'}} src={PortfolioImageLink} />
@@ -219,9 +183,12 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
                   <div className="tech-card">
                     <h3>{element.Title}​</h3>
                     <div className="features">
-                    <ul>
-                    <p dangerouslySetInnerHTML={{ __html: element.Description}}></p>
-                    </ul>
+                      <ul>
+                        <p dangerouslySetInnerHTML={{ __html: element.Description}}></p>
+                      </ul>
+                    </div>
+                    <div className="stackimage">
+                      <img src={element.Image} alt="" />
                     </div>
                   </div>
                 )
@@ -321,7 +288,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
   // get ai tech stack details from AI Tech Stack sharepoint list
   private getAITechStacks = async () => {
-    await sp.web.lists.getByTitle("AI Tech Stack").items.select("ID,Title,Description").top(4999).top(4).get().then((data) => {
+    await sp.web.lists.getByTitle("AI Tech Stack").items.select("ID,Title,Description,Image").expand('AttachmentFiles').top(4999).top(4).get().then((data) => {
       let TechStackArr = [];
       if (data.length > 0) {
         data.map((insight) => {
@@ -329,6 +296,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
           TechStackJson["ID"] = insight.ID;
           TechStackJson["Title"] = insight.Title ? insight.Title : '';
           TechStackJson["Description"] = insight.Description ? insight.Description : '';
+          TechStackJson["Image"] = insight.AttachmentFiles.length > 0 ? insight.AttachmentFiles[0].ServerRelativeUrl : insight.Image ? JSON.parse(insight.Image).serverRelativeUrl : require(`../assets/officebg.jpg`);
           TechStackArr.push(TechStackJson);
         });
         this.setState({ aiTechstacks: TechStackArr });

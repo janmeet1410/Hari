@@ -25,4 +25,5 @@ export interface IBannerProps {
   aistackdesription:any;
   portfolioImage:any;
   QuickAccessDescription:any;
+  ourportfoliotitle:any;
 }
