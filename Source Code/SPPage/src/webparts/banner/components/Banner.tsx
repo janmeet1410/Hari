@@ -241,7 +241,7 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
 
   // get ai products details from AI Products sharepoint list
   private getAIProducts = async () => {
-    await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink").top(4999).orderBy("Modified", false).top(4).get().then((data) => {
+    await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink,ProductOrder").top(4999).orderBy('ProductOrder', true).top(4).get().then((data) => {
       let ProductArr = [];
       if (data.length > 0) {
         data.map((product) => {

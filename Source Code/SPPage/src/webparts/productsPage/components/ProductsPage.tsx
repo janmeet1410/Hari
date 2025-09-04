@@ -55,7 +55,7 @@ export default class ProductsPage extends React.Component<IProductsPageProps, IP
 
   // get ai products details from AI Products sharepoint list
     private getAIProducts = async () => {
-      await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink").top(4999).orderBy("Modified", false).get().then((data) => {
+      await sp.web.lists.getByTitle("AI Products").items.select("ID,Title,Description,KeyFeatures,Category,Department,LearnMoreButtonLink,ViewDemoButtonLink,ProductOrder").top(4999).orderBy('ProductOrder', true).get().then((data) => {
         let ProductArr = [];
         if (data.length > 0) {
           data.map((product) => {
