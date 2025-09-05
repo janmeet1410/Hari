@@ -43,8 +43,11 @@ export interface IBannerWebPartProps {
   QuickAccessDescription:string;
   ourportfoliotitle:string;
   ourportfoliodescription:string;
-    CEOCardTitle:string;
+  CEOCardTitle:string;
   CEOCarddescription:string;
+  ceocardtitle1:string;
+  ceocardtitle2:string;
+  ceocardtitle3:string;
 }
 
 export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartProps> {
@@ -92,8 +95,11 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
         QuickAccessDescription:this.properties.QuickAccessDescription,
         ourportfoliotitle: this.properties.ourportfoliotitle ?  this.properties.ourportfoliotitle : "Our Portfolio",
         ourportfoliodescription:this.properties.ourportfoliodescription? this.properties.ourportfoliodescription : 'Our portfoli description',
-          CEOCardTitle:this.properties.CEOCardTitle ? this.properties.CEOCardTitle : 'C.E.0' ,
-  CEOCarddescription:this.properties.CEOCarddescription ? this.properties.CEOCarddescription : 'Compete.Execute.Optimize' ,
+        CEOCardTitle:this.properties.CEOCardTitle ? this.properties.CEOCardTitle : 'C.E.0' ,
+        CEOCarddescription:this.properties.CEOCarddescription ? this.properties.CEOCarddescription : 'Compete.Execute.Optimize' ,
+        ceocardtitle1:this.properties.ceocardtitle1 ? this.properties.ceocardtitle1 :"C",
+        ceocardtitle2:this.properties.ceocardtitle2 ? this.properties.ceocardtitle2 :"E",
+        ceocardtitle3:this.properties.ceocardtitle3 ? this.properties.ceocardtitle3  :"O",
       }
     );
 
@@ -168,19 +174,25 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                     multiline: true,
                     rows: 3 // Number of visible rows
                   }),
+                  PropertyPaneTextField("ceocardtitle1", {
+                    label: "CEO Card Title 1",
+                  }),
                   PropertyPaneTextField("missionlabel1", {
                     label: "Mission Label 1",
                   }),
-                   PropertyPaneTextField("CEOCardTitle", {
-                    label: "CEO Card Title",
-                  }),
-                   PropertyPaneTextField("CEOCarddescription", {
-                    label: "CEO Card Description",
-                  }),
+                  //  PropertyPaneTextField("CEOCardTitle", {
+                  //   label: "CEO Card Title",
+                  // }),
+                  //  PropertyPaneTextField("CEOCarddescription", {
+                  //   label: "CEO Card Description",
+                  // }),
                   PropertyPaneTextField("missiondescription1", {
                     label: "Mission Description 1",
                     multiline: true,
                     rows: 3 // Number of visible rows
+                  }),
+                  PropertyPaneTextField("ceocardtitle2", {
+                    label: "CEO Card Title 2",
                   }),
                   PropertyPaneTextField("missionlabel2", {
                     label: "Mission Label 2",
@@ -189,6 +201,9 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
                     label: "Mission Description 2",
                     multiline: true,
                     rows: 3 // Number of visible rows
+                  }),
+                  PropertyPaneTextField("ceocardtitle3", {
+                    label: "CEO Card Title 3",
                   }),
                   PropertyPaneTextField("missionlabel3", {
                     label: "Mission Label 3",

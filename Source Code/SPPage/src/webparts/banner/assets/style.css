@@ -741,6 +741,30 @@ background: #eb1700;
       transform: translateY(-6px);
     }
 
+    /* .case-card .case-header .status {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+
+    .case-card .case-header .icon {
+      font-size: 24px;
+      display: inline-block;
+      background: #fff5f5;
+      color: #e63946;
+      padding: 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: none;
+    } */
+
+
     .product-card .icon {
       font-size: 24px;
       display: inline-block;
@@ -959,9 +983,14 @@ background: #eb1700;
     }
 
     .case-header .category {
-      font-size: 13px;
-      font-weight: 500;
       opacity: 0.9;
+      top: 20px;
+      right: 20px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: #fff;
     }
 
     .case-body {

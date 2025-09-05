@@ -81,9 +81,14 @@
     }
 
     .case-header .category {
-      font-size: 13px;
-      font-weight: 500;
       opacity: 0.9;
+      top: 20px;
+      right: 20px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: #fff;
     }
 
     .case-body {

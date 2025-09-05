@@ -9,6 +9,7 @@ import { sp } from '@pnp/sp/presets/all';
 require('../assets/style.css');
 
 const backgroundColors = ["#e63946", "#2ecc71", "#9b59b6"];
+const backgroundColors1 = ["#aeb62c", "#2ecc71", "#9b59b6"];
 export interface IBannerState {
   quickLinks:any;
   aiProducts:any;
@@ -47,20 +48,20 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
               <section style={{width:'50%'}} id='mission' className="mission-section">
                 <h2>{this.props.ourmissiontitle}</h2>
                 <p className="subtitle">{this.props.ourmissiondescription}</p>
-                <div className='CEOcard'>
+                {/* <div className='CEOcard'>
                   <h3>{this.props.CEOCardTitle}</h3>
                   <p>{this.props.CEOCarddescription}</p>
-                </div>
+                </div> */}
                 <div className="mission-cards">
-                  {/* <div className="mission-card" style={{backgroundColor:'transparent'}}>
-                    <div className='missionletters'>C</div>
+                  <div className="mission-card" style={{backgroundColor:'transparent'}}>
+                    <div className='missionletters'>{this.props.ceocardtitle1}</div>
                     </div>        
                                       <div className="mission-card" style={{backgroundColor:'transparent'}}>
-                    <div className='missionletters'>E</div>
+                    <div className='missionletters'>{this.props.ceocardtitle2}</div>
                     </div>        
                                       <div className="mission-card" style={{backgroundColor:'transparent'}}>
-                    <div className='missionletters'>O</div>
-                    </div>         */}
+                    <div className='missionletters'>{this.props.ceocardtitle3}</div>
+                    </div>        
                   <div className="mission-card">
                     <i className="fas fa-bullseye"></i>
                     <h3>{this.props.missionlabel1}</h3>
@@ -157,10 +158,13 @@ export default class Banner extends React.Component<IBannerProps, IBannerState> 
           <div className="case-grid">
             {
               this.state.aiInsights.length > 0 && this.state.aiInsights.map((el,ind) => {
+                const bgColor = backgroundColors1[ind % backgroundColors1.length];
                 return(
                   <div className="case-card">
                     <div className="case-header blue">
-                      <div className="category">{el.Department}</div>
+                      <div className="category" style={{background:bgColor,width:'max-content'}}>{el.Department}</div>
+                        {/* <div className="icon">⚡</div> */}
+                        {/* <span className="status popular" style={{background:bgColor}}>{el.Department}</span> */}
                       <h3>{el.Title}</h3>
                     </div>
                     <div className="case-body">

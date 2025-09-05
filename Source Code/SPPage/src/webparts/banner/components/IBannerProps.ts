@@ -29,6 +29,8 @@ export interface IBannerProps {
   ourportfoliodescription:any;
   CEOCardTitle:any;
   CEOCarddescription:any;
-
+  ceocardtitle1:any;
+  ceocardtitle2:any;
+  ceocardtitle3:any;
 
 }

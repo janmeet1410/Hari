@@ -4,6 +4,10 @@
       text-align: center;
     }
 
+    #products {
+      background-color: rgb(244, 244, 244);
+    }
+
     .badge {
       display: inline-block;
       background: #ffe5e5;
